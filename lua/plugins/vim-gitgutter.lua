@@ -12,5 +12,5 @@ return {
     vim.g.gitgutter_map_keys = true
     vim.g.gitgutter_override_mappings = true
     vim.g.gitgutter_max_signs = 250
-  end
+  end,
 }
