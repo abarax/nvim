@@ -10,6 +10,7 @@ return {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets"
   },
+  event = "VeryLazy",
   config = function()
     local has_words_before = function()
       unpack = unpack or table.unpack
@@ -23,6 +24,9 @@ return {
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
     cmp.setup({
+      formatting = {
+        format = require("tailwindcss-colorizer-cmp").formatter,
+      },
       snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
